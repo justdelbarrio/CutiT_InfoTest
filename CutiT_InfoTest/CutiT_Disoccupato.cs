@@ -82,9 +82,8 @@ namespace CutiT_InfoTest
 
         public override bool isIdoneo()
         {
-            int voto=punteggio();
-
-            if (voto >= 72)
+            
+            if (punteggio() >= 72)
             {
                 return true;
             }
