@@ -18,7 +18,7 @@ namespace CutiT_InfoTest
             }
 
             set { 
-                if (value <= 105)
+                if (value <= 110)
                 { 
                     cutiT_voto = value;
                 }      
@@ -26,7 +26,7 @@ namespace CutiT_InfoTest
                 {
                     throw new Exception("The grade cannot be under 0");
                 }
-                else if(value>105){ 
+                else if(value>110){ 
                     throw new Exception("The selected grade exceeds the maximum allowed"); 
                 } 
             }
@@ -40,7 +40,7 @@ namespace CutiT_InfoTest
             }
             set
             {
-                if (cutiT_voto == 105)
+                if (cutiT_voto == 110)
                 {
                     cutiT_Lode = true;
                 }
@@ -65,11 +65,12 @@ namespace CutiT_InfoTest
 
         public override int punteggio()
         {
-            if (cutiT_voto == 105)
+            if (cutiT_voto == 110)
             {
                 cutiT_Lode = true;
 
                 int voto = (100 * cutiT_voto) / 110;
+                voto+=5;
                 return voto;
             }
             else
