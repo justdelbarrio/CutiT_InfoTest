@@ -49,7 +49,43 @@ namespace CutiT_InfoTest
             int a = 0;
             return a;
         }
-        //FINE TASK 1
+        
+        public virtual string ToString()
+        {
+            return "Nome: " + CutiT_nome + " Matricola: " + CutiT_matricola;
+        }
 
+        public bool Equals(CutiT_Candidato a)
+        {
+            if (a == null)
+                return false;
+            if (this == a)
+                return true;
+            if (this.CutiT_matricola == a.CutiT_matricola || this.CutiT_nome == a.CutiT_nome)
+                return true;
+            else
+                return false;
+        }
+        public int CompareTo(CutiT_Candidato a)
+        {
+            if (a.punteggio() > punteggio())
+            {
+                return 1;
+            }
+            else if (a.punteggio() == punteggio())
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+
+        }
+
+        public virtual int HashCode()
+        {
+            return (CutiT_matricola, CutiT_nome).GetHashCode();
+        }
     }
 }

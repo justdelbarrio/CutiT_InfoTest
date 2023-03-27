@@ -36,7 +36,7 @@ namespace CutiT_InfoTest
 
         public CutiT_Lavoratore(int esperienze)
         {
-            CutiT_esperienze = esperienze;       
+            cutiT_esperienze = esperienze;       
         }
 
         public override int punteggio()
@@ -53,5 +53,40 @@ namespace CutiT_InfoTest
             }
             return false;
         }
+
+        public override string ToString()
+        {
+            return "Esperienza: " + CutiT_esperienze + " Anni"+ " Nome: " + CutiT_nome + " Matricola: " + CutiT_matricola;
+        }
+
+        public bool Equals(CutiT_Lavoratore a)
+        {
+            if (a == null)
+                return false;
+            if (this == a)
+                return true;
+            if (this.CutiT_esperienze == a.CutiT_esperienze)
+                return true;
+            else
+                return false;
+        }
+
+        public int CompareTo(CutiT_Lavoratore a)
+        {
+            if (a.punteggio() > punteggio())
+            {
+                return 1;
+            }
+            else if (a.punteggio() == punteggio())
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+           
+        }
+        
     }
 }

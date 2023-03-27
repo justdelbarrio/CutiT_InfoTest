@@ -93,6 +93,39 @@ namespace CutiT_InfoTest
             }
 
         }
+
+        public override string ToString()
+        {
+            return "Voto: " + CutiT_voto + " Lode: " + CutiT_Lode + " Nome: " + CutiT_nome + " Matricola: " + CutiT_matricola; 
+        }
+        public bool Equals(CutiT_Disoccupato a)
+        {
+            if (a == null)
+                return false;
+            if (this == a)
+                return true;
+            if (this.CutiT_Lode == a.CutiT_Lode || this.CutiT_voto == a.CutiT_voto)
+                return true;
+            else
+                return false;
+        }
+        public int CompareTo(CutiT_Disoccupato a)
+        {
+            if (a.punteggio() > punteggio())
+            {
+                return 1;
+            }
+            else if (a.punteggio() == punteggio())
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+
+        }
+        
     }
 }
 
