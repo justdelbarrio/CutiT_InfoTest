@@ -98,24 +98,33 @@ namespace CutiT_InfoTest
         {
             return "Voto: " + CutiT_voto + " Lode: " + CutiT_Lode + " Nome: " + CutiT_nome + " Matricola: " + CutiT_matricola; 
         }
-        public bool Equals(CutiT_Disoccupato a)
+        public bool Equals(CutiT_Disoccupato other)
         {
-            if (a == null)
+            if (other == null)
                 return false;
-            if (this == a)
+
+            if (this == other)
                 return true;
-            if (this.CutiT_Lode == a.CutiT_Lode || this.CutiT_voto == a.CutiT_voto)
-                return true;
+
+            if (!base.Equals(other))
+                return false;
             else
-                return false;
+            {
+                if (this.CutiT_voto != other.CutiT_voto)
+                    return false;
+                if (this.CutiT_Lode != other.CutiT_Lode)
+                    return false;
+            }
+
+            return true;
         }
         public int CompareTo(CutiT_Disoccupato a)
         {
-            if (a.punteggio() > punteggio())
+            if (a.punteggio() > this.punteggio())
             {
                 return 1;
             }
-            else if (a.punteggio() == punteggio())
+            else if (a.punteggio() == this.punteggio())
             {
                 return 0;
             }
@@ -125,7 +134,7 @@ namespace CutiT_InfoTest
             }
 
         }
-        
+       
     }
 }
 

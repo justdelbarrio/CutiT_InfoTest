@@ -81,11 +81,11 @@ namespace CutiT_InfoTest
 
         public int CompareTo(CutiT_Lavoratore a)
         {
-            if (a.punteggio() > punteggio())
+            if (a.punteggio() > this.punteggio())
             {
                 return 1;
             }
-            else if (a.punteggio() == punteggio())
+            else if (a.punteggio() == this.punteggio())
             {
                 return 0;
             }

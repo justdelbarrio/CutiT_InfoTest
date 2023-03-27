@@ -96,5 +96,7 @@ namespace CutiT_InfoTest
         {
             return (CutiT_matricola, CutiT_nome).GetHashCode();
         }
+
+
     }
 }
