@@ -55,24 +55,33 @@ namespace CutiT_InfoTest
             return "Nome: " + CutiT_nome + " Matricola: " + CutiT_matricola;
         }
 
-        public bool Equals(CutiT_Candidato a)
+        public bool Equals(CutiT_Candidato other)
         {
-            if (a == null)
+            if (other == null)
                 return false;
-            if (this == a)
+
+            if (this == other)
                 return true;
-            if (this.CutiT_matricola == a.CutiT_matricola || this.CutiT_nome == a.CutiT_nome)
-                return true;
+
+            if (!base.Equals(other))
+                return false;
             else
-                return false;
+            {
+                if (this.CutiT_nome != other.CutiT_nome)
+                    return false;
+                if (this.CutiT_matricola != other.CutiT_matricola)
+                    return false;
+            }
+
+            return true;
         }
         public int CompareTo(CutiT_Candidato a)
         {
-            if (a.punteggio() > punteggio())
+            if (a.punteggio() > this.punteggio())
             {
                 return 1;
             }
-            else if (a.punteggio() == punteggio())
+            else if (a.punteggio() == this.punteggio())
             {
                 return 0;
             }

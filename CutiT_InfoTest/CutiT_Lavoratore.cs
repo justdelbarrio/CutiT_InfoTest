@@ -59,16 +59,24 @@ namespace CutiT_InfoTest
             return "Esperienza: " + CutiT_esperienze + " Anni"+ " Nome: " + CutiT_nome + " Matricola: " + CutiT_matricola;
         }
 
-        public bool Equals(CutiT_Lavoratore a)
+        public bool Equals(CutiT_Lavoratore other)
         {
-            if (a == null)
+            if (other == null)
                 return false;
-            if (this == a)
+
+            if (this == other)
                 return true;
-            if (this.CutiT_esperienze == a.CutiT_esperienze)
-                return true;
+
+            if (!base.Equals(other))
+                return false;
             else
-                return false;
+            {
+                if (this.CutiT_esperienze != other.CutiT_esperienze)
+                    return false;
+                
+            }
+
+            return true;
         }
 
         public int CompareTo(CutiT_Lavoratore a)
